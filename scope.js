@@ -8,7 +8,7 @@
 
 // for(let i=0; i< array.length; i++){
 //     const element=array[i];
-     
+
 // }
 // console.log(a);
 
@@ -28,6 +28,6 @@ if(true){
     const username="raju"
     if(username === "raju"){
         const website="youtube"
-        console.log(username + website);
+        console.log(username + website);``
     }
 }
