@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Toggle Example</title>
+  <style>
+     .activepara{
+      color:red;
+      font-size:30px;
+      background-color:yellow;
+      padding:20px;
+    }
+  </style>
+
+ </head>
+ <body>
+  <button id="css">CSS</button>
+  <button id="addClass">Add class</button>
+  <button id="remove">Remove</button>
+  <button id="toggle">Toggle</button>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eaque, accusantium voluptate illum laboriosam debitis officiis, velit, reprehenderit minus pariatur harum eos id autem. Quibusdam cumque beatae sit veniam? Sunt.
+  </p>
+ </body>
+ <script>
+  let btn1=document.querySelector("#css")
+
+  let paraElement=document.querySelector("p")
+
+  btn1.addEventListener("click",()=>{
+    paraElement.style.color="red"
+    paraElement.style.backgroundColor="yellow"
+  })
+
+  let btn2=document.querySelector("#addClass")
+  btn2.addEventListener("click",()=>{
+    paraElement.classList.add('activepara')
+  })
+
+  let btn3=document.querySelector("#remove")
+  btn3.addEventListener("click",()=>{
+    paraElement.classList.remove('activepara')
+  })
+
+  let btn4=document.querySelector("#toggle")
+  btn4.addEventListener("click",()=>{
+    paraElement.classList.toggle('activepara')
+  })
+
+
+
+ </script>
+ </html>
+
