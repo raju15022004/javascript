@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoginList</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+    .loginModal{
+      width:30%;
+      height: 100vh;
+      position: fixed;
+      right: 0px;
+      padding: 0px;
+      background-color:#ccc;
+
+    }
+    .headingModal{
+      display: flex;
+      justify-content: space-between;
+    }
+    .headingModal h3{
+      font-size:20px
+    }
+    .headingModal form{
+          margin-top: 40px;
+    }
+    .headingModal form label{
+      display: block;
+    }
+    .headingModal form input{
+      width: 100px ;
+      height: 40px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .loginModal form button{
+        width: 100%;
+        margin-top: 30px;
+        padding:15px 0px ;
+        color: white;
+        border: none;
+        font-size: 30px;
+        background-color: #194cff;
+    }
+  </style>
+</head>
+<body>
+  <div class="loginModal">
+    <div class="headingModal">
+      <h3>Login</h3>
+      <p>Use email, insted</p>
+
+    </div>
+    <form action="">
+      <label for="">Mobile Number *</label>
+      <input type="text">
+      <button>Login</button>
+
+    </form>
+  </div>
+  <button>Login</button>
+
+</body>
+</html>

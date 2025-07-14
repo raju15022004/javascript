@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0px;
+      padding:0px ;
+      font-family: sans-serif;
+    }
+    h1{
+      text-align: center;
+      padding: 50px 0px;
+    }
+    .faqMid{
+      max-width: 1000px;
+      margin: auto;
+    }
+    .faqItems{
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+    .faqItems h3{
+      padding:15px ;
+      position: relative;
+      cursor: pointer;
+      background-color: yellowgreen;
+    }
+    .faqItems h3 span{
+      position: absolute;
+      right: 10px;
+    }
+    .faqItems p{
+      font-size: 18px;
+      line-height: 30px;
+      padding: 10px;
+      display: none;
+    }
+    .showAns{
+      display: block !important;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Frequently Asked Question</h1>
+  <div class="faqMid">
+    <div class="faqItems">
+      <h3>How do I book a taxi with GI Express Taxi? <span>+</span></h3>
+      <p>You can book a texi online though our easy-to-use booking system
+        or call us directy.We ensure quick and hassle-free booking for all customer.
+      </p>
+
+    </div>
+    <div class="faqItems">
+      <h3>How do I book a taxi with GI Express Taxi?<span>+</span></h3>
+      <p>You can book a texi online though our easy-to-use booking system
+        or call us directy.We ensure quick and hassle-free booking for all customer.
+      </p>
+
+    </div>
+
+    <div class="faqItems">
+      <h3>How do I book a taxi with GI Express Taxi?<span>+</span></h3>
+      <p>You can book a texi online though our easy-to-use booking system
+        or call us directy.We ensure quick and hassle-free booking for all customer.
+      </p>
+
+    </div>
+
+    <div class="faqItems">
+      <h3>How do I book a taxi with GI Express Taxi?<span>+</span></h3>
+      <p>You can book a texi online though our easy-to-use booking system
+        or call us directy.We ensure quick and hassle-free booking for all customer.
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+<script>
+  let allQuestion=document.querySelectorAll(".faqItems h3")
+
+  allQuestion.forEach((item,currentIndex)=>{
+    item.addEventListener("click",()=>{
+
+      allQuestion.forEach((heading,i)=>{
+        if(currentIndex!=i){
+          heading.lastElementChild.innerHTML="+"
+          heading.nextElementSibling.classList.remove("showAns")
+        // console.log(heading,i)
+        }
+      })
+
+      if(item.lastElementChild.innerHTML=="+"){
+        item.lastElementChild.innerHTML="-"
+      }
+      else{
+        item.lastElementChild.innerHTML="+"
+      }
+      item.nextElementSibling.classList.toggle("showAns")
+    })
+  })
+</script>
+</html>
