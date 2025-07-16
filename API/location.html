@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <h1>JavaScript Geolocation</h1>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  try {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } catch(err) {
+    x.innerHTML = err;
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+} -->
+
+
+<from id="myFrom">
+  <input type="text" id="name" required>
+  <input type="email" id="email" required>
+  <button type="submit">Submit</button>
+</from>
+
+<script>
+  const from=document.getElementById("myFrom");
+
+  from.addEventListener("submit",function(event){
+    if(!from.checkValidity()){
+      event.preventDefault();
+      alert("please fill out the from correctly!");
+    }
+  })
+</script>
+
+</body>
+</html>

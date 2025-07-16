@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <button id="demo">start</button>
+  <script>
+  // DOM API example
+// document.getElementById("class").innerText = "Hello API!";
+// const button=document.querySelector('btn');
+// console.log("hello Api");
+
+
+
+//  async function  getData(){
+//   return new promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       resolve(455)
+//     },3500);
+//   })
+// }
+
+// console.log("Loding modules")
+
+// console.log("Dom something else")
+
+// console.log("Load data")
+// let data=getData()
+// console.log(data)
+
+// console.log("process data")
+
+// const button=document.getElementById('btn');
+// btn.addEventListener("click",()=>{
+//   console.log("Raju");
+// })
+
+// const button=document.getElementById('btn');
+// btn.adEventListener("mousemove",(e)=>{
+//   console.log("Raju",e.clientX,e.clientY);
+// })
+const myElement = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    myElement.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  myElement.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+</body>
+
+</html>

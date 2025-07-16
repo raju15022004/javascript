@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .myClass{color: green;}
+  </style>
+</head>
+<body>
+<h1 id="mainTitle">Hello Dom </h1>
+<p class="myclass">paragraph 1</p>
+<p class="myclass">paragraph 2</p>
+<p class="intro">Intro paragraph</p>
+<button onclick="runExamples()">Run Dom Methods</button>
+</body>
+<script>
+  function runExamples(){
+      let title=document.getElementById("mainTitle");
+      title.innerHTML="Change Title using getElementById";
+
+
+  let classItems=document.getElementsByClassName("myClass");
+  classItems[0].style.color="red";
+  let tags=document.getElementsByClassName("p");
+  tags[1].style.fontweight="bold";
+
+  let firstIntro=document.querySelector(".intro");
+  firstIntro.innerHTML="update with queryselector";
+
+  let allParas=document.querySelectorAll("p");
+  allParas.forEach(p => p.style.backgroundColor="lightyellow");
+
+  document.getElementById("container").innerHTML="<p>New content added with innerHTML</p>";
+
+  document.getElementById("container").style.border="2px solid black";
+  document.getElementById("container").style.padding="10px";
+
+  let newElement=document.createElement("h3");
+  newElement.innerHTML="I'm a new element";
+
+  document.body.appendChild(newElement);
+
+  let removeTarget=document.querySelector(".intro");
+  removeTarget.parantNode.removeChild(removeTarget);
+
+  }
+</script>
+</html>
