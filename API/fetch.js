@@ -67,6 +67,49 @@ const updatePost= async (newpost, id)=>{
 };
 
 
+
+const patchPost= async (newpost, id)=>{
+   try {
+    const response = await fetch(`${apiEndPoint}/${id}`,{
+      method:"PATCH",
+      body:JSON.stringify(newpost),
+      headers:{"Content-type": "application/json; charset=UTF-8"},
+    });
+    if(response.status !=200){
+      throw new Error(`Something went wrong, Status Code: ${response.status}`);
+
+    }
+    const post = await response.json();
+    return post;
+
+  }
+  catch(error){
+    console.log(error);
+  }
+};
+
+
+const deletePost= async (id)=>{
+   try {
+    const response = await fetch(`${apiEndPoint}/${id}`,{
+      method:"DELETE",
+      // body:JSON.stringify(newpost),
+      // headers:{"Content-type": "application/json; charset=UTF-8"},
+    });
+    if(response.status !=200){
+      throw new Error(`Something went wrong, Status Code: ${response.status}`);
+
+    }
+    const post = await response.json();
+    return post;
+
+  }
+  catch(error){
+    console.log(error);
+  }
+};
+
+
 createButton.addEventListener("click",async()=>{
   const newPost={
     title:"New Post Title",
@@ -87,9 +130,23 @@ updateButton.addEventListener("click",async()=>{
     userId:1,
   };
 
-  const updatePost = await updatePost(newPost,2);
+  const updatedPost = await updatePost(newPost, 2);
   console.log(updatePost);
 });
 
+
+patchButton.addEventListener("click",async()=>{
+  const newPost={
+    title:"Updated Post Title",
+  };
+  const patchedPost = await patchPost(newPost, 2);
+  console.log(patchedPost);
+});
+
+deleteButton.addEventListener("click",async()=>{
+
+  const deleteButton = await deletePost(2);
+  console.log(deleteButton);
+});
 
 
