@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+</head>
+<body>
+  <h1>Fetch Api</h1>
+  <button  class="btn btn-success" id="fetch">Fetch Api</button>
+
+  <script>
+    const apiEndPoint="https://jsonplaceholder.typicode.com/posts"
+
+    const fetchButton = document.querySelector("#fetch");
+
+
+  const fetchData = async (newPost)=>{
+  try {
+    const response =await fetch(apiEndPoint,{
+      method:"POST",
+      body:JSON.stringify(newPost),
+      headers:{"Content-type": "application/json; charset=UTF-8"}
+    });
+    if(!response.ok){
+      throw new Error(`Something went wrong, Status Code: ${response.status}`);
+
+    }
+    const post = await response.json();
+    return post;
+
+  }
+  catch(error){
+    console.log(error);
+  }
+};
+
+fetchButton.addEventListener("click",async()=>{
+  const newPost={
+    title:"New Post Title",
+    body:"New Post Body",
+    userId:1,
+  };f
+
+  const fetch = await fetchData(newPost);
+  console.log(fetch);
+});
+
+  </script>
+
+</body>
+</html>
+
+
