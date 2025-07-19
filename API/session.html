@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History</title>
+</head>
+<body>
+  Enter name<input type="text" id="uname"><br>
+  Enter Email<input type="email" id="email"><br>
+  <input type="button" value="save" onclick="save()">
+  <input type="button" value="Read" onclick="read()">
+  <div id="output">
+
+  </div>
+<script>
+  function save(){
+    var a=document.getElementById("uname").value;
+    sessionStorage.setItem("uname",a);
+
+    var b=document.getElementById("email").value;
+    sessionStorage.setItem("email",b);
+    alert("data saved");
+  }
+
+  function read(){
+    var name=sessionStorage.getItem("uname");
+    var email=sessionStorage.getItem("email");
+    // document.write("<br>Name="+name);
+    // document.write("<br>Email="+email);
+    document.getElementById("output").innerHTML="name="+name+"Email="+email;
+
+  }
+</script>
+</body>
+</html>
