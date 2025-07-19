@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation Api</title>
+  <style>
+    #mybtn {
+      color: black;
+      background-color: yellow;
+      border: 1px solid black;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    #mybtn:hover{
+       color: yellow;
+       background-color: black;
+       border-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>Geolocation Api</h1>
+  <button id="mybtn" onclick="cmd()">Button</button>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+  //  function cmd(){
+
+  //   if(navigator.geolocation){
+  //     alert("oyur browser support gelocation api");
+  //     navigator.geolocation.getCurrentPosition(mycoords)
+  //   }
+  //   else{
+  //     alert("your browser dose not support gelocation api");
+  //   }
+
+  //   function mycoords(position){
+  //     var lat=position.coords.latitude;
+  //     var longt=position.coords.longitude;
+  //     alert("Latitude :"+lat+" "+"Longitude:"+longt);
+  //   }
+  //  }
+
+   function cmd(){
+    if(navigator.geolocation)
+    {
+    //   navigator.geolocation.getCurrentPosition(mycoords, function(error){
+    //    alert("Error retrieving location:"+error.message);
+    // });
+
+    navigator.geolocation.getCurrentPosition(mycoords,myerror);
+  }
+    else
+    {
+       alert("Your browser does not support the Geolocation API.");
+    }
+
+   }
+
+   function mycoords(pos){
+    var lat=pos.coords.latitude;
+    var lan=pos.coords.longitude;
+    $("h1").text("Latitude : "+lat+","+"Longitude :"+lan);
+
+   }
+
+   function myerror(error){
+    if(error.code=0){
+      alert("UNKNOWN_ERROR");
+    }
+      else if(error.code=0){
+      alert("PERMISSION_DENIED");
+    }
+     else if(error.code=0){
+      alert("POSITION_UNAVAILABLE");
+    }
+     else if(error.code=0){
+      alert("TIMEOUT");
+    }
+   }
+
+  //  function mc(position){
+  //   var lat=position.coords.latitude;
+  //   var lng = position.coords.longitude;
+  //   var myapi = `https://api.opencagedata.com/geocode/v1/json?q=${lat},${lng}&key=b1eeeba1d1de4c3f8cdd60637a830e87`;
+
+
+  //   $.get(myapi, function(data) {
+  //     console.log(data);
+  //     // alert("You are at: " + data.results[0].formatted);
+  //     $("h1").text(data.results[0].components.state);
+
+
+  //   });
+  //  }
+
+
+
+
+  </script>
+
+</body>
+</html>
