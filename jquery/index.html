@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <p class="odd">this is my body</p>
+  <p id="second">this is my body</p>
+  <p class="odd">this is my body</p>
   <p>this is my body</p>
 </body>
- <script src="jquery-3.7.1.min.js"></script>
+<script src="jquery-3.7.1.min.js"></script>
 <script>
-  $('p').click();
-  $('p').click(function(){
-    console.log('you clicked on p');
-    $('p').hide();
-  })
+  // $('p').click();
+  // $('p').click(function(){
+  //   console.log('you clicked on p');
+  //   $('p').hide();
+  // })
+
+  $(document).ready(function () {
+    console.log("I am in a new file now");
+
+    console.log("we are using jquery");
+
+    // $('p').click(function(){
+    //   console.log('you clicked on p',this)
+    // });
+
+    //  $('p').dblclick(function(){
+    //   console.log('you  double clicked on p',this)
+    // });
+
+
+    // $('p').mouseenter(function(){
+    //   console.log('you entered:',this);
+    // });
+
+    // $('p').mousemove(function(){
+    //  console.log('you are enterd',this);
+    // })
+
+    $('p').on(
+      {
+      click: function () {
+        console.log('Thanks for clicked', this);
+      },
+      mouseleave: function () {
+        console.log("mouseleave");
+      }
+    });
+
+  });
 </script>
+
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p class="odd">this is my body</p>
+  <p id="second">this is my body</p>
+  <p class="odd">this is my body</p>
+  <p>this is my body</p>
+  <button id="but">toggle </button>
+
+  <div id="wiki">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptates facilis exercitationem aliquam nobis esse saepe quae ad in tempora recusandae sequi quis et sit molestiae dolor, ipsa, facere maiores.</div>
+
+</body>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+  //  $('#wiki').hide(1000,function(){
+  //   console.log("hidden");
+  //  })
+
+  //  $('#wiki').show(1000,function(){
+  //   console.log("hidden");
+  //  })
+
+  $('#but').click(function(){
+    $('#wiki').fadeOut(1000);
+  })
+
+  $('#but').click(function(){
+    $('#wiki').fadeIn(1000);
+  })
+</script>
+</html>
