@@ -33,7 +33,7 @@ const mycoding=[
     languagename:"javascript",
     languageFileName:"js"
   },{
-    languagename:"jav",
+    languagename:"Java",
     languageFileName:"js"
   },{
     languagename:"python",
