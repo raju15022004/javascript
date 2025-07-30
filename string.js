@@ -28,4 +28,4 @@ console.log(newStringOne.trim());
 const url = "https://www.google.com/raju%20kumar"
 
 console.log(url.replace('%20', '_'))
-console.log(url.includes('raju'));
+console.log(url.includes('rajukumar'));
